@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adam&Eva</title>
+</head>
+<body>
+<script>
+    let Apple = function () {
+        this.weight = 10;
+        this.decrease = function () {
+            this.weight = (this.weight - 1);
+        };
+        this.getWeight = function () {
+            return this.weight;
+        };
+        this.isEmpty = function () {
+            if (this.weight > 0) {
+                return true;
+            }
+            return false;
+        };
+    };
+    let Human = function (gender, name, weight) {
+        this.gender = gender;
+        this.name = name;
+        this.weight = weight;
+        this.isMmale = function () {
+            return this.gender;
+        };
+        this.setGender = function (bool) {
+            this.gender = bool
+        };
+        this.eat = function (apple) {
+            apple.decrease();
+        };
+        this.say = function (string) {
+            return this.name + ": " + string;
+        };
+        this.getName = function () {
+            return this.name;
+        };
+        this.setName = function (string) {
+            this.name = string;
+        };
+        this.getWeight = function () {
+            return this.weight;
+        };
+        this.setWeight = function (number) {
+            this.weight = number;
+        };
+    };
+
+
+    let eva = new Human(false, "eva", 45);
+    console.log(eva);
+    let adam = new Human(true, "adam", 60);
+    console.log(adam);
+    let appleInTheHeaven = new Apple();
+    console.log(appleInTheHeaven);
+
+    console.log(adam.say("chào em"));
+    console.log(eva.say("chào anh"));
+    console.log(adam.say("ăn táo không"));
+    console.log(eva.say("oke"));
+    while (appleInTheHeaven.weight > 0) {
+        console.log("adam ăn 1 quả táo");
+        adam.eat(appleInTheHeaven);
+        console.log("eva ăn 1 quả táo");
+        eva.eat(appleInTheHeaven);
+    }
+    console.log("2 người ăn hết táo rồi");
+
+</script>
+</body>
+</html>
